@@ -25,4 +25,11 @@ Route.group(() => {
 
 Route.group(() => {
   Route.resource('projects', 'ProjectController')
+
+  Route.get('projects/:id/tasks', 'TaskController.index')
+  Route.post('projects/:id/tasks', 'TaskController.store')
+  
+  Route.put('tasks/:id', 'TaskController.update')
+  Route.patch('tasks/:id', 'TaskController.update')
+  Route.delete('tasks/:id', 'TaskController.destroy')
 }).prefix('/api')
